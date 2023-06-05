@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Título</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .bg-image {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-button {
+      background-color: #233d7d;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-image">
+    <div class="container text-center">
+      <h1>Bem-vindo ao Sistema de Presenças</h1>
+      <button class="btn btn-primary custom-button" onclick="location.href='/login'">Ir para a página de login</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var images = ['ima1.jpg', 'ima2.jpg', 'ima1.jpg']; // Substitua pelos nomes das suas imagens
+
+      var currentIndex = 0;
+      var bgImage = document.querySelector('.bg-image');
+
+      function changeBackground() {
+        bgImage.style.backgroundImage = 'url(' + images[currentIndex] + ')';
+        currentIndex = (currentIndex + 1) % images.length;
+      }
+
+      setInterval(changeBackground, 5000);
+    });
+  </script>
+</body>
+
+</html>
